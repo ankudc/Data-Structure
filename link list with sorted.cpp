@@ -1,0 +1,58 @@
+#include<stdio.h>
+struct list
+{
+    int info;
+    struct list *next;
+};
+int main()
+{
+    struct list *p,*q,*r,*t;
+    int x,y;
+    p=new list;
+    printf("\nEnter the first value: ");
+    scanf("%d",&p->info);
+    printf("\nEnter the next value:");
+    scanf("%d",&x);
+    q=p;
+    while(x>0)
+    {
+        t=new list;
+        t->info=x;
+        q->next=t;
+        q=q->next;
+        printf("\nEnter the next value:");
+        scanf("%d",&x);
+    }
+    q->next=NULL;
+    t=p;
+    printf("\nThe list contain.......\n\n:");
+    while(t)
+    {
+        printf("%d",t->info);
+        t=t->next;
+    }
+    t=new list;
+
+    t->info=x;
+
+    //printf("\nAdd number:");
+    //scanf("%d",&n);
+    q=p;
+    while((q->info<x)&&(q!=NULL))
+    {
+
+           r=q;
+            q=q->next;
+        }
+       t->next=q;
+       r->next=t;
+
+    q=p;
+    while(q)
+    {
+        printf("%d",q->info);
+        q=q->next;
+    }
+}
+
+
